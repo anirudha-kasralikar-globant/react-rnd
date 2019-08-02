@@ -1,0 +1,64 @@
+{
+  "parser": "babel-eslint",
+  "extends": [
+    "eslint:recommended",
+    //    "plugin:jsx-a11y/recommended",
+    "prettier",
+    "prettier/standard",
+    "plugin:prettier/recommended",
+    "airbnb",
+    "plugin:flowtype/recommended",
+    "plugin:compat/recommended",
+    "plugin:react/recommended",
+    "prettier/react"
+  ],
+  "env": {
+    "browser": true,
+    "node": true,
+    "es6": true,
+    "jest": true
+  },
+  "plugins": ["compat", "react", "prettier", "react-hooks", "flowtype", "jsx-a11y"],
+  "globals": {
+    "Atomics": "readonly",
+    "SharedArrayBuffer": "readonly"
+  },
+  "settings": {
+    "react": {
+      "version": "detect"
+    },
+    "polyfills": ["fetch", "Number.isNaN"]
+  },
+  "parserOptions": {
+    "ecmaVersion": 2018,
+    "sourceType": "module",
+    "ecmaFeatures": {
+      "experimentalObjectRestSpread": true,
+      "jsx": true
+    }
+  },
+  "rules": {
+    "linebreak-style": ["error", "unix"],
+    "quotes": ["warn", "single"],
+    "semi": ["error", "always"],
+    //    "semi": [2, "never"],
+    "no-unexpected-multiline": 2,
+    "no-unused-vars": [
+      "warn",
+      {
+        "vars": "all",
+        "args": "none",
+        "ignoreRestSiblings": false
+      }
+    ],
+    "react-hooks/rules-of-hooks": "error",
+    "react-hooks/exhaustive-deps": "warn",
+    "prettier/prettier": "error",
+    "flowtype/define-flow-type": 1,
+    "flowtype/use-flow-type": 1,
+    "max-len": [1, 140, 2, { "ignoreComments": true }],
+    "react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx"] }],
+    "compat/compat": 2,
+    "arrow-parens": [2, "as-needed", { "requireForBlockBody": false }]
+  }
+}
