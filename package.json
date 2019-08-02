@@ -144,8 +144,6 @@
   },
   "husky": {
     "hooks": {
-      "pre-commit": "npm run githook",
-      "pre-push": "npm run githook"
     }
   }
 }

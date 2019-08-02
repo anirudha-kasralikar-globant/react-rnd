@@ -1,11 +1,10 @@
 /* eslint-disable */
 import {
-  ADD_POST,
-  DELETE_POST,
-  FETCH_POST,
-  FETCH_PRODUCTS_BEGIN,
-  FETCH_PRODUCTS_SUCCESS,
-  FETCH_PRODUCTS_FAILURE,
+  CREATE_POST_SUCCESS,
+  DELETE_POST_SUCCESS,
+  FETCH_POSTS_BEGIN,
+  FETCH_POSTS_SUCCESS,
+  FETCH_POSTS_FAILURE, CREATE_POST_BEGIN, CREATE_POST_FAILURE,
 } from '../action/postAction';
 
 const initialState = {
@@ -16,32 +15,21 @@ const initialState = {
 
 export default function postReducer(state = initialState, action) {
   switch (action.type) {
-    case FETCH_PRODUCTS_BEGIN:
-      // Mark the state as "loading" so we can show a spinner or something
-      // Also, reset any errors. We're starting fresh.
+    case FETCH_POSTS_BEGIN:
       return {
         ...state,
         loading: true,
         error: null,
       };
 
-    case FETCH_PRODUCTS_SUCCESS:
-      // All done: set loading "false".
-      // Also, replace the items with the ones from the server
+    case FETCH_POSTS_SUCCESS:
       return {
         ...state,
         loading: false,
         items: action.payload.products,
       };
 
-    case FETCH_PRODUCTS_FAILURE:
-      // The request failed. It's done. So set loading to "false".
-      // Save the error, so we can display it somewhere.
-      // Since it failed, we don't have items to display anymore, so set `items` empty.
-      //
-      // This is all up to you and your app though:
-      // maybe you want to keep the items around!
-      // Do whatever seems right for your use case.
+    case FETCH_POSTS_FAILURE:
       return {
         ...state,
         loading: false,
@@ -49,10 +37,46 @@ export default function postReducer(state = initialState, action) {
         items: [],
       };
 
-    case ADD_POST:
-      return [...state, action.payload];
+    case CREATE_POST_BEGIN:
+      return {
+        ...state,
+        loading: true,
+        error: null,
+      };
 
-    case DELETE_POST:
+    case CREATE_POST_SUCCESS:
+      console.log('*****************');
+      console.log('action.payload');
+      console.log(action.payload)
+
+      console.log(state.items);
+      const updatedItems = state.items.push(action.payload);
+      console.log(state.items);
+      console.log({
+        ...state,
+        loading: false,
+        error: false
+      });
+      console.log({
+        ...state,
+        loading: false,
+        error: false,
+        items: updatedItems,
+      });
+      console.log('*****************');
+      return {
+        ...state,
+        loading: false,
+      };
+
+    case CREATE_POST_FAILURE:
+      return {
+        ...state,
+        loading: false,
+        error: action.payload.error,
+      };
+
+    case DELETE_POST_SUCCESS:
       const filteredItems = state.items.filter(post => {
         return post.id !== action.payload.id;
       });
@@ -63,9 +87,6 @@ export default function postReducer(state = initialState, action) {
         error: false,
         items: filteredItems,
       };
-
-    case FETCH_POST:
-      return action.posts;
 
     default:
       // ALWAYS have a default case in a reducer
