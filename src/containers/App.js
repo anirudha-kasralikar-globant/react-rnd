@@ -3,7 +3,7 @@
 import React from 'react';
 import { Container } from 'semantic-ui-react';
 import { Route, Switch } from 'react-router-dom';
-import Header from '../component/Header';
+import Header from '../components/Header';
 import * as ROUTES from '../constants/routes';
 import MyIssues from './MyIssues';
 import Explore from './Explore';

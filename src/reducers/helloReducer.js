@@ -8,7 +8,7 @@ import {
   SAY_HELLO_ASYNC_REQUEST,
   SAY_HELLO_ASYNC_SUCCESS,
   SAY_HELLO_ASYNC_FAILURE,
-} from '../action/helloAction';
+} from '../actions/helloAction';
 
 const initialState = Immutable.fromJS({
   message: 'Initial reducer message',

@@ -7,7 +7,7 @@ import { Provider } from 'react-redux';
 import { BrowserRouter } from 'react-router-dom';
 import store from './store';
 import './style/main.less';
-import App from './container/App';
+import App from './containers/App';
 
 declare var module: any;
 

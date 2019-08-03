@@ -3,8 +3,8 @@
 
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import Post from '../component/Post';
-import { deletePost, fetchAllPosts } from '../action/postAction';
+import Post from '../components/Post';
+import { deletePost, fetchAllPosts } from '../actions/postAction';
 
 class PostList extends Component {
   componentDidMount() {

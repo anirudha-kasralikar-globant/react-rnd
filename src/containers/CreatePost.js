@@ -1,8 +1,8 @@
 // @flow
 
 import { connect } from 'react-redux';
-import { createPost } from '../action/postAction';
-import NewPost from '../component/NewPost';
+import { createPost } from '../actions/postAction';
+import NewPost from '../components/NewPost';
 
 const mapDispatchToProps = dispatch => ({
   onAddPost: post => {

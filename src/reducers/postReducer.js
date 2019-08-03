@@ -5,7 +5,7 @@ import {
   FETCH_POSTS_BEGIN,
   FETCH_POSTS_SUCCESS,
   FETCH_POSTS_FAILURE, CREATE_POST_BEGIN, CREATE_POST_FAILURE,
-} from '../action/postAction';
+} from '../actions/postAction';
 
 const initialState = {
   items: [],
