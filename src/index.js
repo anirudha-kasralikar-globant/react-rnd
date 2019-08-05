@@ -5,9 +5,9 @@ import ReactDOM from 'react-dom';
 import axe from 'react-axe';
 import { Provider } from 'react-redux';
 import { BrowserRouter } from 'react-router-dom';
-import store from './store';
-import './style/main.less';
-import App from './containers/App';
+import store from './state/store';
+import './index.less';
+import App from './views/App';
 
 declare var module: any;
 
