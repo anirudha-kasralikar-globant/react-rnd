@@ -1,15 +1,12 @@
 // @flow
-
 import React from 'react';
 import ReactDOM from 'react-dom';
 import axe from 'react-axe';
 import { Provider } from 'react-redux';
 import { BrowserRouter } from 'react-router-dom';
-import store from './state/store';
+import store from './app/state/store';
 import './index.less';
-import App from './views/App';
-
-declare var module: any;
+import App from './app/views/App';
 
 const mountNode = document.getElementById('app');
 if (mountNode !== null) {

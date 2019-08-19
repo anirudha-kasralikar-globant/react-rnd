@@ -4,8 +4,9 @@
     "airbnb",
     "eslint:recommended",
     "plugin:flowtype/recommended",
+    "flowtype-essential",
     "plugin:compat/recommended",
-//    "plugin:jsx-a11y/recommended",
+    //    "plugin:jsx-a11y/recommended",
     "prettier",
     "prettier/standard",
     "plugin:prettier/recommended",
@@ -18,7 +19,15 @@
     "es6": true,
     "jest": true
   },
-  "plugins": ["compat", "react", "react-hooks", "flowtype", "jsx-a11y", "import", "prettier"],
+  "plugins": [
+    "compat",
+    "react",
+    "react-hooks",
+    "flowtype",
+    "jsx-a11y",
+    "import",
+    "prettier"
+  ],
   "globals": {
     "Atomics": "readonly",
     "SharedArrayBuffer": "readonly"
@@ -27,7 +36,16 @@
     "react": {
       "version": "detect"
     },
-    "polyfills": ["fetch", "Number.isNaN"]
+    "polyfills": [
+      "fetch",
+      "Number.isNaN",
+      "Promise.reject"
+    ],
+    "import/resolver": {
+      "webpack": {
+        "config": "./config/webpack.dev.js"
+      }
+    }
   },
   "parserOptions": {
     "ecmaVersion": 2018,
@@ -38,9 +56,18 @@
     }
   },
   "rules": {
-    "linebreak-style": ["error", "unix"],
-    "quotes": ["warn", "single"],
-    "semi": ["error", "always"],
+    "linebreak-style": [
+      "error",
+      "unix"
+    ],
+    "quotes": [
+      "warn",
+      "single"
+    ],
+    "semi": [
+      "error",
+      "always"
+    ],
     //    "semi": [2, "never"],
     "no-unexpected-multiline": 2,
     "no-unused-vars": [
@@ -53,13 +80,52 @@
     ],
     "react-hooks/rules-of-hooks": "error",
     "react-hooks/exhaustive-deps": "warn",
-    "prettier/prettier": "error",
-    "flowtype/define-flow-type": 1,
-    "flowtype/use-flow-type": 1,
-    "max-len": [1, 140, 2, { "ignoreComments": true }],
-    "react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx"] }],
+    "max-len": [
+      1,
+      140,
+      2,
+      {
+        "ignoreComments": true
+      }
+    ],
+    "react/jsx-filename-extension": [
+      1,
+      {
+        "extensions": [
+          ".js",
+          ".jsx"
+        ]
+      }
+    ],
     "compat/compat": 2,
-    "arrow-parens": [2, "as-needed", { "requireForBlockBody": false }],
-    "no-console": "off"
+    "arrow-parens": [
+      2,
+      "as-needed",
+      {
+        "requireForBlockBody": false
+      }
+    ],
+    "no-console": "off",
+    "prettier/prettier": "error",
+    "flowtype/delimiter-dangle": [
+      2,
+      "always-multiline"
+    ],
+    "flowtype/no-weak-types": 0,
+    "flowtype/object-type-delimiter": 0,
+    "flowtype/require-parameter-type": 0,
+    "flowtype/require-return-type": 0,
+    "flowtype/require-valid-file-annotation": [
+      2,
+      "always",
+      {
+        "annotationStyle": "line",
+        "strict": false
+      }
+    ],
+    "flowtype/semi": [
+      2,
+      "always"
+    ]
   }
 }

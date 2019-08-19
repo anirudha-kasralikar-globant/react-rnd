@@ -9,6 +9,7 @@
     "babel-plugin-styled-components",
     "@babel/plugin-proposal-class-properties",
     "@babel/plugin-syntax-dynamic-import",
+    "@babel/transform-runtime",
     "flow-react-proptypes"
   ]
 }
